@@ -1,10 +1,17 @@
 #include <stdio.h>
+#include "Funciones.h"
 
 int main(void) {
     int option;
+    char string[100];
+    char substring[100];
+    int initialPosition;
+    int result;
+    int noExist=0;
+
     do {
         printf("Bienvenido al menu\n");
-        printf("1. Opcion 1\n");
+        printf("1.Search substring\n");
         printf("2. Opcion 2\n");
         printf("3. Opcion 3\n");
         printf("4. Opcion 4\n");
@@ -18,8 +25,19 @@ int main(void) {
         scanf("%d", &option);
         switch(option) {
             case 1:
-                printf("Opcion 1\n");
-                break;
+                printf("Enter the string: ");
+                scanf(" %[^\n]", string);
+                printf("Enter the substring: ");
+                scanf("%s", substring);
+                printf("Enter the position from where to start the search: ");
+                scanf("%d", &initialPosition);
+                result = buscarSubcadena(string, substring, initialPosition);
+                if (result != -1) {
+                    printf("The substring was found at position: %d\n", result);
+                } else {
+                    printf("Substring position: %d\n", noExist);
+                }
+            break;
             case 2:
                 printf("Opcion 2\n");
                 break;

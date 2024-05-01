@@ -1,0 +1,19 @@
+# ninja log v5
+6	581	7362322148046087	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+584	945	7362322151604961	Taller_C.exe	52a7830750a266fb
+8	336	7362335713975415	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+14	395	7362335714573817	CMakeFiles/Taller_C.dir/Funciones.c.obj	dc9d6daa9935075a
+395	1129	7362335721853133	Taller_C.exe	959f634b3bcea87e
+9	176	7362336738233410	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+177	409	7362336740487383	Taller_C.exe	959f634b3bcea87e
+5	106	7362337581071392	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+106	303	7362337582978756	Taller_C.exe	959f634b3bcea87e
+4	98	7362337977126875	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+98	305	7362337979131176	Taller_C.exe	959f634b3bcea87e
+7	214	7362340207591157	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+215	486	7362340210234112	Taller_C.exe	959f634b3bcea87e
+4	126	7362340575607464	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+127	335	7362340577662315	Taller_C.exe	959f634b3bcea87e
+7	117	7362343667770512	CMakeFiles/Taller_C.dir/Funciones.c.obj	dc9d6daa9935075a
+4	124	7362343667850279	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+124	730	7362343673561755	Taller_C.exe	959f634b3bcea87e
