@@ -55,12 +55,6 @@ build CMakeFiles/Taller_C.dir/main.c.obj: C_COMPILER__Taller_C_unscanned_Debug D
   OBJECT_DIR = CMakeFiles\Taller_C.dir
   OBJECT_FILE_DIR = CMakeFiles\Taller_C.dir
 
-build CMakeFiles/Taller_C.dir/Funciones.c.obj: C_COMPILER__Taller_C_unscanned_Debug D$:/INFORMACION/Desktop/Proyecto$ en$ C/TallerC/Funciones.c || cmake_object_order_depends_target_Taller_C
-  DEP_FILE = CMakeFiles\Taller_C.dir\Funciones.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Taller_C.dir
-  OBJECT_FILE_DIR = CMakeFiles\Taller_C.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Taller_C
@@ -69,7 +63,7 @@ build CMakeFiles/Taller_C.dir/Funciones.c.obj: C_COMPILER__Taller_C_unscanned_De
 #############################################
 # Link the executable Taller_C.exe
 
-build Taller_C.exe: C_EXECUTABLE_LINKER__Taller_C_Debug CMakeFiles/Taller_C.dir/main.c.obj CMakeFiles/Taller_C.dir/Funciones.c.obj
+build Taller_C.exe: C_EXECUTABLE_LINKER__Taller_C_Debug CMakeFiles/Taller_C.dir/main.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Taller_C.dir
