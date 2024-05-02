@@ -22,12 +22,14 @@ int main(void) {
                 break;
             case 2:
                 printf("Opcion 2\n");
+
                 break;
             case 3:
                 printf("Opcion 3\n");
                 break;
             case 4:
-                printf("Opcion 4\n");
+                printf("Opcion 4-LAURA\n");
+
                 break;
             case 5:
                 printf("Opcion 5\n");
