@@ -1,0 +1,8 @@
+# ninja log v5
+6	75	7363171049207891	CMakeFiles/taller_c.dir/main.c.obj	dba05548fa98dfd8
+1	82	7363171049278869	CMakeFiles/taller_c.dir/functions.c.obj	6a1611cd23f3c980
+83	177	7363171050191534	taller_c.exe	647d2ef0b40c9869
+2	70	7363171210625401	CMakeFiles/taller_c.dir/functions.c.obj	6a1611cd23f3c980
+70	154	7363171211423328	taller_c.exe	647d2ef0b40c9869
+2	63	7363171432414321	CMakeFiles/taller_c.dir/main.c.obj	dba05548fa98dfd8
+63	142	7363171433155816	taller_c.exe	647d2ef0b40c9869
