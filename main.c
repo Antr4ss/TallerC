@@ -2,24 +2,24 @@
 
 #include <string.h>
 
-int buscarSubcadena(char *string, char *substring, int initialPosition);
-void rellenarCadena(char* string, char character, int direction, int numCharacters);
-
+int searchString(char *string, char *substring, int initialPosition);
+void fillString(char* string, char character, int direction, int numCharacters);
+char* extractSubstring(char* string, int posInicial, int posFinal);
 
 int main(void) {
     int option;
-    int initialPosition;
+    int initialPosition, finalPosition;
     int result;
     char character;
     int diretcion;
     int numCharacters;
-
+    char* subsString;
 
     do {
         printf("Bienvenido al menu\n");
         printf("1.Search substring\n");
         printf("2. Fill string\n");
-        printf("3. Opcion 3\n");
+        printf("3. Extract substring\n");
         printf("4. Opcion 4\n");
         printf("5. Opcion 5\n");
         printf("6. Opcion 6\n");
@@ -43,7 +43,7 @@ int main(void) {
                 scanf("%s", substring);
                 printf("Enter the position from where to start the search: ");
                 scanf("%d", &initialPosition);
-                result = buscarSubcadena(string, substring, initialPosition);
+                result = searchString(string, substring, initialPosition);
                 if (result != -1) {
                     printf("The substring was found at position: %d\n", result);
                 } else {
@@ -61,15 +61,24 @@ int main(void) {
                 printf("Enter the number of characters to fill: ");
                 scanf("%d", &numCharacters);
 
-                rellenarCadena(string, character, diretcion, numCharacters);
+                fillString(string, character, diretcion, numCharacters);
 
                 printf("Resulting string: %s\n", string);
 
             break;
 
             case 3:
-                printf("Opcion 3\n");
-                break;
+                printf("Enter the string: ");
+                scanf(" %[^\n]", string);
+                printf("Enter the initial position: ");
+                scanf("%d", &initialPosition);
+                printf("Enter the final position (0 for until the end): ");
+                scanf("%d", &finalPosition);
+
+                subsString = extractSubstring(string, initialPosition, finalPosition);
+
+                printf("Resulting string: %s\n", subsString);
+            break;
 
             case 4:
                 printf("Opcion 4\n");
@@ -100,7 +109,7 @@ int main(void) {
     return 0;
 }
 
-int buscarSubcadena(char *string, char *substring, int initialPosition) {
+int searchString(char *string, char *substring, int initialPosition) {
     int i, j;
 
     for (i = initialPosition; i < strlen(string); i++) {
@@ -121,7 +130,7 @@ int buscarSubcadena(char *string, char *substring, int initialPosition) {
 }
 
 
-void rellenarCadena(char* string, char character, int direction, int numCharacters) {
+void fillString(char* string, char character, int direction, int numCharacters) {
     char relleno[numCharacters + 1];
     for(int i = 0; i < numCharacters; i++) {
         relleno[i] = character;
@@ -138,7 +147,30 @@ void rellenarCadena(char* string, char character, int direction, int numCharacte
     }
 }
 
+char* extractSubstring(char* string, int initialPosition, int finalPosition) {
+    static char subString[100];
+    int i, j;
 
+    if (finalPosition == 0) {
+        finalPosition = strlen(string);
+    }
+
+    if (initialPosition > finalPosition) {
+        // Extraer subcadena en forma invertida
+        for (i = initialPosition, j = 0; i >= finalPosition; i--, j++) {
+            subString[j] = string[i];
+        }
+    } else {
+        // Extraer subcadena normal
+        for (i = initialPosition, j = 0; i < finalPosition; i++, j++) {
+            subString[j] = string[i];
+        }
+    }
+
+    subString[j] = '\0';  // Terminar la subcadena con un carácter nulo
+
+    return subString;
+}
 
 
 
