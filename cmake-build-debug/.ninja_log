@@ -1,7 +1,5 @@
 # ninja log v5
-9	904	7362379393478759	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
-4	99	7362379767200505	CMakeFiles/Taller_C.dir/Funciones.c.obj	dc9d6daa9935075a
-100	318	7362379769344769	Taller_C.exe	959f634b3bcea87e
-2	1306	7362382715369629	build.ninja	1cae2050381204af
 4	151	7362382717304457	CMakeFiles/Taller_C.dir/main.c.obj	ee9539db27befcb0
+2	1306	7364067403907122	build.ninja	1cae2050381204af
+4	99	7362379767200505	CMakeFiles/Taller_C.dir/Funciones.c.obj	dc9d6daa9935075a
 152	425	7362382719976263	Taller_C.exe	52a7830750a266fb
