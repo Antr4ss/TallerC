@@ -3,21 +3,22 @@
 #include <string.h>
 
 int buscarSubcadena(char *string, char *substring, int initialPosition);
+void rellenarCadena(char* string, char character, int direction, int numCharacters);
+
 
 int main(void) {
     int option;
-    char string[100];
-    char substring[100];
     int initialPosition;
     int result;
-    int noExist=0;
-
+    char character;
+    int diretcion;
+    int numCharacters;
 
 
     do {
         printf("Bienvenido al menu\n");
         printf("1.Search substring\n");
-        printf("2. Opcion 2\n");
+        printf("2. Fill string\n");
         printf("3. Opcion 3\n");
         printf("4. Opcion 4\n");
         printf("5. Opcion 5\n");
@@ -28,8 +29,14 @@ int main(void) {
         printf("0. Salir\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &option);
+
         switch(option) {
+
             case 1:
+                char string[100];
+                char substring[100];
+                int noExist=0;
+
                 printf("Enter the string: ");
                 scanf(" %[^\n]", string);
                 printf("Enter the substring: ");
@@ -43,12 +50,27 @@ int main(void) {
                     printf("Substring position: %d\n", noExist);
                 }
             break;
+
             case 2:
-                printf("Opcion 2\n");
-                break;
+                printf("Enter the string: ");
+                scanf(" %[^\n]", string);
+                printf("Enter fill character: ");
+                scanf(" %c", &character);
+                printf("Enter the padding direction (0 for left, 1 for right): ");
+                scanf("%d", &diretcion);
+                printf("Enter the number of characters to fill: ");
+                scanf("%d", &numCharacters);
+
+                rellenarCadena(string, character, diretcion, numCharacters);
+
+                printf("Resulting string: %s\n", string);
+
+            break;
+
             case 3:
                 printf("Opcion 3\n");
                 break;
+
             case 4:
                 printf("Opcion 4\n");
                 break;
@@ -97,5 +119,26 @@ int buscarSubcadena(char *string, char *substring, int initialPosition) {
 
     return -1;
 }
+
+
+void rellenarCadena(char* string, char character, int direction, int numCharacters) {
+    char relleno[numCharacters + 1];
+    for(int i = 0; i < numCharacters; i++) {
+        relleno[i] = character;
+    }
+    relleno[numCharacters] = '\0';
+
+    if(direction == 0) {
+        // Rellenar a la izquierda
+        memmove(&string[numCharacters], string, strlen(string) + 1);
+        memcpy(string, relleno, numCharacters);
+    } else {
+        // Rellenar a la derecha
+        strcat(string, relleno);
+    }
+}
+
+
+
 
 
