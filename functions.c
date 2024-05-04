@@ -15,7 +15,7 @@ char *str_diff(const char *first_str, const char *second_str) {
     int k = 0;
     for (int i = 0; i < first_len; i++) {
         char target = first_str[i];
-        if (!character_exists(second_str, target)) {
+        if (!strchr(second_str, target)) {
             result[k] = target;
             k++;
         }
@@ -55,14 +55,4 @@ char *insert_substr(const char *base_str, const char *substr, const int position
 
     result[total_len - 1] = '\0';
     return result;
-}
-
-int character_exists(const char *source, const char target) {
-    size_t str_len = strlen(source);
-    int i = 0;
-    while (i < str_len && source[i] != target) {
-        i++;
-    }
-
-    return i < str_len;
 }
