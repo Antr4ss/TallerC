@@ -1,13 +1,20 @@
 #include <stdio.h>
+#include <string.h>
+
+void replaceCharacter(char *string, char originalChar, char replacementChar);
 
 int main(void) {
+
+    char auxOption4 [50] ;
+    char char1Option4;
+    char char2Option4;
     int option;
     do {
         printf("Bienvenido al menu\n");
         printf("1. Opcion 1\n");
         printf("2. Opcion 2\n");
         printf("3. Opcion 3\n");
-        printf("4. Opcion 4\n");
+        printf("4. Replace occurrences\n");
         printf("5. Opcion 5\n");
         printf("6. Opcion 6\n");
         printf("7. Opcion 7\n");
@@ -28,7 +35,16 @@ int main(void) {
                 printf("Opcion 3\n");
                 break;
             case 4:
-                printf("Opcion 4-LAURA\n");
+                printf("Enter the string: ");
+                scanf(" %[^\n]", auxOption4);
+                printf("Enter the character to be replaced: ");
+                scanf(" %c", &char1Option4);
+                printf("Enter the new character: ");
+                scanf(" %c", &char2Option4);
+                replaceCharacter(auxOption4, char1Option4, char2Option4);
+
+                printf("Modified  string:  %s\n", auxOption4);
+
 
                 break;
             case 5:
@@ -55,4 +71,14 @@ int main(void) {
         }
     } while(option!=0);
     return 0;
+}
+
+void replaceCharacter(char *string, char originalChar, char replacementChar) {
+    int length = strlen(string);
+
+    for (int i = 0; i < length; i++) {
+        if (string[i] == originalChar) {
+            string[i] = replacementChar;
+        }
+    }
 }
