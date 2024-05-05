@@ -5,10 +5,13 @@ void replaceCharacter(char *string, char originalChar, char replacementChar);
 
 int startsWith(const char *baseString, const char *checkString);
 
+void removeDuplicates(char *str);
+
 int main(void) {
 
     char auxOption4 [50];
     char auxOption5 [50];
+    char auxOption6 [50];
     char verify [50];
     char char1Option4;
     char char2Option4;
@@ -21,7 +24,7 @@ int main(void) {
         printf("3. Opcion 3\n");
         printf("4. Replace occurrences\n");
         printf("5. Validates if a string starts with another.\n");
-        printf("6. Opcion 6\n");
+        printf("6. String without characters repeated\n");
         printf("7. Opcion 7\n");
         printf("8. Opcion 8\n");
         printf("9. Opcion 9\n");
@@ -66,7 +69,14 @@ int main(void) {
 
                 break;
             case 6:
-                printf("Opcion 6\n");
+
+
+                printf("Enter the string: ");
+                scanf(" %[^\n]", auxOption6);
+
+                removeDuplicates(auxOption6);
+
+                printf("String without duplicate characters: %s\n", auxOption6);
                 break;
             case 7:
                 printf("Opcion 7\n");
@@ -113,5 +123,25 @@ int startsWith(const char *baseString, const char *checkString) {
     }
 
     return 1;
+}
+
+void removeDuplicates(char *str) {
+    int len = strlen(str);
+    int index = 0;
+    int i, j;
+
+    for (i = 0; i < len; ++i) {
+        int found = 0;
+        for (j = 0; j < index; ++j) {
+            if (str[i] == str[j]) {
+                found = 1;
+                break;
+            }
+        }
+        if (!found) {
+            str[index++] = str[i];
+        }
+    }
+    str[index] = '\0';
 }
 
