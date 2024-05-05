@@ -1,5 +1,6 @@
 #include <malloc.h>
 #include <string.h>
+#include <ctype.h>
 
 #include "functions.h"
 
@@ -54,5 +55,33 @@ char *insert_substr(const char *base_str, const char *substr, const int position
     }
 
     result[total_len - 1] = '\0';
+    return result;
+}
+
+char *sort_str(const char *src) {
+    size_t len = strlen(src);
+
+    char *result = (char *)malloc(len + 1);
+    if (!result) {
+        return NULL;
+    }
+
+    strcpy(result, src);
+
+    for (size_t i = 0; i < len - 1; ++i) {
+        size_t min_index = i;
+        for (size_t j = i + 1; j < len; ++j) {
+            if (tolower(result[j]) < tolower(result[min_index])) {
+                min_index = j;
+            }
+        }
+
+        if (min_index != i) {
+            char temp = result[i];
+            result[i] = result[min_index];
+            result[min_index] = temp;
+        }
+    }
+
     return result;
 }
