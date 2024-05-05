@@ -3,11 +3,16 @@
 
 void replaceCharacter(char *string, char originalChar, char replacementChar);
 
+int startsWith(const char *baseString, const char *checkString);
+
 int main(void) {
 
-    char auxOption4 [50] ;
+    char auxOption4 [50];
+    char auxOption5 [50];
+    char verify [50];
     char char1Option4;
     char char2Option4;
+    int result;
     int option;
     do {
         printf("Bienvenido al menu\n");
@@ -15,7 +20,7 @@ int main(void) {
         printf("2. Opcion 2\n");
         printf("3. Opcion 3\n");
         printf("4. Replace occurrences\n");
-        printf("5. Opcion 5\n");
+        printf("5. Validates if a string starts with another.\n");
         printf("6. Opcion 6\n");
         printf("7. Opcion 7\n");
         printf("8. Opcion 8\n");
@@ -48,7 +53,17 @@ int main(void) {
 
                 break;
             case 5:
-                printf("Opcion 5\n");
+
+                printf("Enter the string: ");
+                scanf(" %[^\n]", auxOption5);
+                printf("Enter the string to verify: ");
+                scanf(" %[^\n]", verify);
+
+
+                result=startsWith(auxOption5,verify);
+
+                printf("If the string meets the condition, the result will be 1; otherwise, it will be 0.\n------------------\n The result is: %d\n", result);
+
                 break;
             case 6:
                 printf("Opcion 6\n");
@@ -82,3 +97,21 @@ void replaceCharacter(char *string, char originalChar, char replacementChar) {
         }
     }
 }
+
+int startsWith(const char *baseString, const char *checkString) {
+    int baseLength = strlen(baseString);
+    int checkLength = strlen(checkString);
+
+    if (checkLength > baseLength) {
+        return 0;
+    }
+
+    for (int i = 0; i < checkLength; i++) {
+        if (baseString[i] != checkString[i]) {
+            return 0; // Mismatch found, not a prefix
+        }
+    }
+
+    return 1;
+}
+
