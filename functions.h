@@ -1,6 +1,9 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
+#include <malloc.h>
+#include <string.h>
+#include <ctype.h>
 
 char *str_diff(const char *first_str, const char *second_str);
 
