@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/INFORMACION/Desktop/Proyecto en C/TallerC/cmake-build-debug",
-		"source" : "D:/INFORMACION/Desktop/Proyecto en C/TallerC"
+		"build" : "C:/Users/pc/CLionProjects/TallerC/TallerC/cmake-build-debug",
+		"source" : "C:/Users/pc/CLionProjects/TallerC/TallerC"
 	},
 	"version" : 
 	{
