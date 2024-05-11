@@ -55,12 +55,6 @@ build CMakeFiles/taller_c.dir/main.c.obj: C_COMPILER__taller_c_unscanned_Debug C
   OBJECT_DIR = CMakeFiles\taller_c.dir
   OBJECT_FILE_DIR = CMakeFiles\taller_c.dir
 
-build CMakeFiles/taller_c.dir/functions.c.obj: C_COMPILER__taller_c_unscanned_Debug C$:/Users/Estevan/CLionProjects/taller_c/functions.c || cmake_object_order_depends_target_taller_c
-  DEP_FILE = CMakeFiles\taller_c.dir\functions.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\taller_c.dir
-  OBJECT_FILE_DIR = CMakeFiles\taller_c.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target taller_c
@@ -69,7 +63,7 @@ build CMakeFiles/taller_c.dir/functions.c.obj: C_COMPILER__taller_c_unscanned_De
 #############################################
 # Link the executable taller_c.exe
 
-build taller_c.exe: C_EXECUTABLE_LINKER__taller_c_Debug CMakeFiles/taller_c.dir/main.c.obj CMakeFiles/taller_c.dir/functions.c.obj
+build taller_c.exe: C_EXECUTABLE_LINKER__taller_c_Debug CMakeFiles/taller_c.dir/main.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\taller_c.dir
