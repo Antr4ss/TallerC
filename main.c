@@ -1,11 +1,46 @@
 #include <stdio.h>
 #include <string.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include <ctype.h>
 
+/**
+ * Replaces all occurrences of a character with another character in a given string.
+ *
+ * @param string The string in which the replacement will be performed.
+ * @param originalChar The character to be replaced.
+ * @param replacementChar The character to replace the original character.
+ *
+ * This function replaces all occurrences of the originalChar character in the string with the replacementChar character.
 
+ */
 void replaceCharacter(char *string, char originalChar, char replacementChar);
+
+/**
+ * Validates whether a string starts with another string.
+ *
+ * @param baseString The base string to check against.
+ * @param checkString The string to verify whether it starts with the base string.
+ *
+ * @return
+ *     1 if the checkString starts with the baseString.
+ *     0 if the checkString does not start with the baseString.
+ *
+ * This function checks if the checkString starts with the baseString.
+ * It returns 1 if the checkString starts with the baseString, otherwise it returns 0.
+
+ */
 int startsWith(const char *baseString, const char *checkString);
+/**
+ * Remove duplicate characters from a string.
+ *
+ * @param str The string to remove duplicates from.
+ *
+ * This function removes duplicate characters from the given string.
+ *
+ */
+void removeDuplicates(char *str);
+
+
 void removeDuplicates(char *str);
 int searchString(char *string, char *substring, int initialPosition);
 void fillString(char* string, char character, int direction, int numCharacters);
@@ -108,7 +143,7 @@ int main(void) {
     char* subsString;
 
     do {
-        printf("Bienvenido al menu\n");
+        printf("Welcome to the C workshop\n");
         printf("1.Search substring\n");
         printf("2. Fill string\n");
         printf("3. Extract substring\n");
@@ -118,8 +153,8 @@ int main(void) {
         printf("7. Difference between strings.\n");
         printf("8. Insert substring.\n");
         printf("9. Sort string\n");
-        printf("0. Salir\n");
-        printf("Seleccione una opcion: ");
+        printf("10. Exit\n");
+        printf("Select an option:");
         scanf("%d", &option);
 
         switch(option) {
@@ -198,7 +233,6 @@ int main(void) {
                 break;
             case 6:
 
-
                 printf("Enter the string: ");
                 scanf(" %[^\n]", auxOption6);
 
@@ -222,14 +256,14 @@ int main(void) {
                 break;
             }
 
-            case 0:
-                printf("Saliendo...\n");
+            case 10:
+                printf("Thank you for using our program.\n");
                 break;
             default:
-                printf("Opcion no valida\n");
+                printf("Invalid option\n");
                 break;
         }
-    } while(option!=0);
+    } while(option!=10);
     return 0;
 }
 
