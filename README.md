@@ -1,1 +1,7 @@
-Proyecto desarrollado en Windows, usando el IDE CLion
+# Taller en C
+
+
+## Plataforma y Editor
+
+- **Plataforma:** Windows
+- **Editor(IDE):** CLion
